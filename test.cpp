@@ -49,7 +49,7 @@ int main()
 	system("pause");
 	
 
-	Point3DQueueDestroy(pQ);//<-trouble
+	Point3DQueueDestroy(pQ);//<-trouble Need help
 
 	std::cout << ">deleted\n";
 
