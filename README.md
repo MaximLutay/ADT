@@ -26,23 +26,23 @@ just a c++ ADT
 		// создаем очередь
 		Point3DQueue* pQ = Point3DQueueCreate();
 
-// помещаем в очередь 3 точки
-Point3D p1 = { 0.0, 0.0, 0.0 };
-Point3D p2 = { 1.0, 1.0, 1.0 };
-Point3D p3 = { -1.0, -1.0, -1.0 };
-Point3DQueuePush( * pQ, p1 );
-Point3DQueuePush( * pQ, p2 );
-Point3DQueuePush( * pQ, p2 );
+		// помещаем в очередь 3 точки
+		Point3D p1 = { 0.0, 0.0, 0.0 };
+		Point3D p2 = { 1.0, 1.0, 1.0 };
+		Point3D p3 = { -1.0, -1.0, -1.0 };
+		Point3DQueuePush( * pQ, p1 );
+		Point3DQueuePush( * pQ, p2 );
+		Point3DQueuePush( * pQ, p2 );
 
-// убираем первую точку из очереди
-Point3DQueuePop( * pQ );
-
-// извлекаем точку в начале очереди, проверяем, что она равна p2
-Point3D p = Point3DQueueFront( * pQ );
-assert( p.x == p2.x && p.y == p2.y && p.z == p2.z );
-
-// уничтожаем очередь
-Point3DQueueDestroy( pQ );
+		// убираем первую точку из очереди
+		Point3DQueuePop( * pQ );
+		
+		// извлекаем точку в начале очереди, проверяем, что она равна p2
+		Point3D p = Point3DQueueFront( * pQ );
+		assert( p.x == p2.x && p.y == p2.y && p.z == p2.z );
+		
+		// уничтожаем очередь
+		Point3DQueueDestroy( pQ );
 
 В результате должно получиться 3 файла:
 point3d_queue.hpp - заголовочный файл структуры данных.
