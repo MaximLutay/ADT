@@ -61,10 +61,7 @@ n_of_curr_elem++;    /*!this line is important, don't touch!*/		i++;
 
 		int* u = (p_first_mass + s);int *v = (p_first_mass + s + 1);
 
-		//test std::cout << "\n0..M = " << m << "\n";
-
-
-
+	
 		while ((*u > *v) && (p_ended_sbmas<= (p_first_mass+n_of_curr_elem)  ) ) {++s;  u++;  v++;	//если первый и второй удовлетворяют ++s -> удовлетворяют ли второй и третий ++s и.т.д.     в итоге sub_s_length = количество элементов подмассива 
 
 		++sub_s_lenghth;
