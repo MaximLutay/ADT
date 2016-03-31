@@ -1,5 +1,5 @@
 // ADT_Lb_19_b4.cpp: определяет точку входа для консольного приложения.
-//ДАННЫЙ КОД СОДЕРЖИТ НЕОБЪЯСНИМУЮ АВТОРОМ МАГИЮ КОТОРУЮ ОН НАПИСАЛ (V) o_O (v)
+//ДАННЫЙ КОД СОДЕРЖИТ НЕОБЪЯСНИМУЮ АВТОРОМ  (V) o_O (v)
 
 #include "stdafx.h"
 #include <iostream>
@@ -146,23 +146,23 @@ void outPrint(int *address, int n_elem,char separ) {
 
 
 
-| | | | |	-    N		
-  | | | |	-	 N
-    | | | |  +    Y
-    | | | | |   +  Y
-    | | | | | |  +  Y			  <--	output this  --  
-														|
-    | | | | | | |   -       N   				  ------
-       	      | | | |	 - N	
-	            | | | |	 - N
-	              | | | |  + Y
-	              | | | | |   +  Y
-                  | | | | | |  +  Y			  <--	output this  --  
-														            |
-                  | | | | | | |   -    N    				  ------
+| | | | |                               -    N		
+  | | | |	                        -    N
+    | | | |  	                        +    Y
+    | | | | |                           +    Y
+    | | | | | |                         +    Y      <--	output this  --  
+									|
+    | | | | | | |                       -    N 			  ------
+       	      | | | |	                -    N	
+	            | | | |	        -    N
+	              | | | |           +    Y
+	              | | | | |         +    Y
+                  | | | | | |           +    Y      <--	output this  --  
+									|
+                  | | | | | | |         -    N  		  ------
 				    
 					    .  .  .
 
-						if N o try another
-						if Y eah try this+1
+						if N_o try another
+						if Y_eah try this+1
 */
