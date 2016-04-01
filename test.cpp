@@ -1,19 +1,3 @@
-#include "integer_vector.hpp"
-
-
-int main() {
-	IntegerVector *p_desb = new IntegerVector;
-	IntegerVectorInit(*p_desb);
-	IntegerVectorReadTillZeroOrLess(*p_desb, std::cin);
-
-
-
-	
-	
-	return 0;
-};
-
-
 #include <iostream>
 #include<cassert>
 #include"point3D_queue.hpp"
