@@ -1,3 +1,4 @@
+
 #include "stdafx.h"
 
 #include"point3D_queue.hpp"
@@ -67,12 +68,26 @@ Point3D Point3DQueueFront(Point3DQueue * ptr) {
 
 void Point3DQueueDestroy(Point3DQueue *ptr) {
 
-	Point3DQueueElement * curr = ptr->p_beg;
-	while (curr!= nullptr){
-		Point3DQueueElement * temp = curr;
-		ptr->p_beg = curr->p_next;
+	bool stop = false;
+	while ( !stop){
+
+
+
+		Point3DQueueElement * temp = ptr->p_beg;
+		ptr->p_beg = ptr->p_beg->p_next;
+
+
+
+		if (ptr->p_beg == ptr->p_end->p_next) {
+			stop = true;
+			continue;
+			
+		};
+
 		delete temp;
+		
 
 	};
+	delete ptr;
 
 };
