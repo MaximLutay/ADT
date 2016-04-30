@@ -33,7 +33,7 @@ bool IntegerVectorIsEmpty(const IntegerVector & _vector)
 
 void IntegerVectorGrow(IntegerVector & _vector)
 {
-	int nAllocatedNew = _vector.m_nAllocated + 5; //âîçðàñòàíèå íà 5
+	int nAllocatedNew = _vector.m_nAllocated + 5; //Ã¢Ã®Ã§Ã°Ã Ã±Ã²Ã Ã­Ã¨Ã¥ Ã­Ã  5
 	int * pNewData = new int[nAllocatedNew];
 
 	memcpy(pNewData, _vector.m_pData, sizeof(int) * _vector.m_nAllocated);
@@ -155,7 +155,7 @@ void IntegerVectorAnalyze_and_Output(IntegerVector *_vector){
 
 
 		if (n_subelements > 0 ) {
-			if (_vector->m_pData + m + n_subelements >= _vector->m_pData + _vector->m_nUsed ) {  //ïðîâåðêà íà âûâîä òîëüêî â ïðåäåëàõ
+			if (_vector->m_pData + m + n_subelements >= _vector->m_pData + _vector->m_nUsed ) {  //Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ  Ã­Ã  Ã¢Ã»Ã¢Ã®Ã¤ Ã²Ã®Ã«Ã¼ÃªÃ® Ã¢ Ã¯Ã°Ã¥Ã¤Ã¥Ã«Ã Ãµ
 				for (int r = 0;r < n_subelements;r++) {
 					std::cout << *(start_sub + r) << "  ";
 				};
