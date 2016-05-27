@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include<ctime>
 #include<cassert>
@@ -22,7 +23,7 @@ int $getsize(node* p) ;
 void $fixsize(node* p) ;
 node* $rotateright(node* p); 
 node* $rotateleft(node* q) ;
-node* $insertroot(node* p, int k) ;
+node* $insertmyTr(node* p, int k) ;
 node* $insert(node* p, int k) ;
 node* $join(node* p, node* q) ;
 node* $remove(node* p, int k);
@@ -32,15 +33,52 @@ node* $remove(node* p, int k);
 
 
 int main(){
+	srand(time(0));
 	
+	node  myTr(0);
 	
-	node  root(-1);
+	clock_t clock1 = clock();
+
 	
-	for(int k = 10;k>0;k--){
-		$insert(&root , k);
+	for(int k = 40;k>0;k--){
+		$insert(&myTr , k);
 	};
 	
-	std::cout<<$getsize(&root);
+	clock_t clock2 = clock();
+
+		
+	std::cout<<$getsize(&myTr);
+	std::cout<<"\n Dlt clk = "<<clock2 - clock1<<"\n";
+	
+	
+	
+	clock_t clock3 = clock();
+
+	
+	for(int k = 0;k<40;k++){
+		$insert(&myTr , k);
+	};
+	
+	clock_t clock4 = clock();
+
+		
+	std::cout<<$getsize(&myTr);
+	std::cout<<"\n Dlt clk = "<<clock4 - clock3<<"\n";
+	
+	
+	
+	clock_t clock5 = clock();
+
+	
+	for(int k = 0;k<40;k++){
+		$insert(&myTr ,rand()%100);
+	};
+	
+	clock_t clock6 = clock();
+
+		
+	std::cout<<$getsize(&myTr);
+	std::cout<<"\n Dlt clk = "<<clock6 - clock5<<"\n";
 	
 
 	
@@ -77,7 +115,7 @@ void $fixsize(node* p)
 
 node* $rotateright(node* p) 
 {
-	std::cout<<"\n>rTR";
+	//std::cout<<"\n>rTR";
 	node* q = p->left; 
 	if( !q ) return p; 
 	p->left = q->right; 
@@ -91,7 +129,7 @@ node* $rotateright(node* p)
 
 node* $rotateleft(node* q) 
 {
-	std::cout<<"\n>rTL";
+	//std::cout<<"\n>rTL";
 	node* p = q->right;
 	if( !p ) return q;
 	q->right = p->left;
@@ -102,18 +140,18 @@ node* $rotateleft(node* q)
 };
 
 
-node* $insertroot(node* p, int k) {
+node* $insertmyTr(node* p, int k) {
 	
-	std::cout<<"\n>Iroot";
+	//std::cout<<"\n>ImyTr";
 	if( !p ) return new node(k); 
 	if( k<p->key ) 
 	{
-		p->left = $insertroot(p->left,k); 
+		p->left = $insertmyTr(p->left,k); 
 		return $rotateright(p); 
 	}
 	else 
 	{
-		p->right = $insertroot(p->right,k);
+		p->right = $insertmyTr(p->right,k);
 		return $rotateleft(p);
 	}
 };
@@ -122,14 +160,14 @@ node* $insertroot(node* p, int k) {
 
 node* $insert(node* p, int k) 
 {
-	std::cout<<"\n>I";
+	//std::cout<<"\n>I";
 	if( !p ) return new node(k); 
 	if( rand()%(p->size+1)==0 ) 
-		return $insertroot(p,k); 
+		return $insertmyTr(p,k); 
 	if( p->key > k ) {
-		p->left = $insert(p->left,k); std::cout<<"L";
+		p->left = $insert(p->left,k); //std::cout<<"L";
 	}else{
-		p->right = $insert(p->right,k); std::cout<<"R";
+		p->right = $insert(p->right,k); //std::cout<<"R";
 	};	
     $fixsize(p); 
 	return p; 
@@ -175,7 +213,10 @@ node* $remove(node* p, int k)
 
 
 
-int $maxDepth( node *p){
-	
-};
+
+
+
+
+
+
 
