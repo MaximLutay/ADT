@@ -19,11 +19,7 @@ struct IntegerDeque
 	int m_frontUsed, m_backUsed;
 };
 
-int main() {
 
-
-
-};
 
 
 
